@@ -35,11 +35,13 @@ def get_command_line_argument
     inp=[]
     i=0
     while i < 5
-    inp=dns_string[x].strip.split(",")
+    inp=dns_string[i].strip.split(",")
       j=0
       while j < 3
         array[i][j]=inp[j].strip
+        j=j+1;
       end
+      i=i+1;
     end
   dns_record= Hash[array.map { |key,d1,d2| [d1,{:type=>key,:target=>d2}]}]
  end
